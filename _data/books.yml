@@ -1,0 +1,45 @@
+# One entry per book. The Home tile counts entries here; chapter posts under
+# `_posts/books/<slug>/` are not counted as separate books.
+#
+# Fields:
+#   slug   — the folder name under _posts/books/ (required)
+#   title  — display title (required)
+#   author — author name (optional)
+#   status — reading / done / queued / paused (optional; free-form)
+#   theme  — slug from _data/books_themes.yml (required for /books/ tile grouping)
+
+- slug: ddia
+  title: Designing Data-Intensive Applications
+  author: Martin Kleppmann
+  status: reading
+  theme: database
+
+- slug: system-design-volume-1
+  title: System Design Interview Vol. 1
+  author: Alex Xu
+  status: reading
+  theme: system-design
+
+- slug: system-design-volume-2
+  title: System Design Interview Vol. 2
+  author: Alex Xu
+  status: reading
+  theme: system-design
+
+- slug: linchpin
+  title: Linchpin
+  author: Seth Godin
+  status: queued
+  theme: productivity
+
+- slug: deep-work
+  title: Deep Work
+  author: Cal Newport
+  status: queued
+  theme: productivity
+
+- slug: make-time
+  title: Make Time
+  author: Jake Knapp & John Zeratsky
+  status: reading
+  theme: productivity

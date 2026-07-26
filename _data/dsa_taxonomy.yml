@@ -1,0 +1,71 @@
+- slug: arrays-hashing
+  title: "Arrays & Hashing"
+  desc: "Two-sum and friends — the hashing-as-O(1)-lookup pattern, plus prefix sums and grouping."
+
+- slug: two-pointers
+  title: "Two Pointers"
+  desc: "Linear scans that share a slice from both ends, or chase each other through the array."
+
+- slug: sliding-window
+  title: "Sliding Window"
+  desc: "Variable- and fixed-size windows over a sequence — maximum subarray, longest substring, and friends."
+
+- slug: stack
+  title: "Stack"
+  desc: "Matching, nesting, monotonic stacks. The data structure behind almost every parsing problem."
+
+- slug: binary-search
+  title: "Binary Search"
+  desc: "Search a sorted thing — then realize how often you can sort the search space yourself."
+
+- slug: linked-list
+  title: "Linked List"
+  desc: "Fast/slow pointers, in-place reversal, dummy nodes. The interview's favourite pointer drill."
+
+- slug: trees
+  title: "Trees"
+  desc: "Traversals, recursion shape, height/depth invariants. BST as the well-behaved special case."
+
+- slug: tries
+  title: "Tries"
+  desc: "Prefix trees — word search, autocomplete, dictionary problems."
+
+- slug: heap-priority-queue
+  title: "Heap / Priority Queue"
+  desc: "Top-K, k-way merge, the lazy way to keep the largest/smallest seen so far."
+
+- slug: backtracking
+  title: "Backtracking"
+  desc: "DFS through a choice tree, undoing the choice on the way back up. Permutations, combinations, partitions."
+
+- slug: graphs
+  title: "Graphs"
+  desc: "BFS, DFS, connected components, topological sort. Adjacency-list everything."
+
+- slug: advanced-graphs
+  title: "Advanced Graphs"
+  desc: "Dijkstra, Bellman-Ford, Floyd-Warshall, MST. Where graphs meet weighted edges and shortest paths."
+
+- slug: 1d-dp
+  title: "1-D Dynamic Programming"
+  desc: "Subproblems indexed by one number — climbing stairs, house robber, longest increasing subseq."
+
+- slug: 2d-dp
+  title: "2-D Dynamic Programming"
+  desc: "Subproblems indexed by two numbers — grid paths, edit distance, knapsack variants."
+
+- slug: greedy
+  title: "Greedy"
+  desc: "Take the locally best move; prove it lines up with the global optimum. Easy to write, hard to justify."
+
+- slug: intervals
+  title: "Intervals"
+  desc: "Sort by start, sweep, merge. The pattern behind meeting rooms, calendar conflicts, and skylines."
+
+- slug: math-geometry
+  title: "Math & Geometry"
+  desc: "Rotations, spirals, modular arithmetic, GCD/LCM — the grab-bag of problems that aren't really patterns."
+
+- slug: bit-manipulation
+  title: "Bit Manipulation"
+  desc: "XOR tricks, set/clear/test, counting bits. Most often used inside other patterns."

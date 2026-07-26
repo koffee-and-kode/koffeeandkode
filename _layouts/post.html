@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    {% if page.read_time %}
+    <div class="post-meta">
+      <span class="read-time">{{ page.read_time }} min read</span>
+    </div>
+    {% endif %}
+    {% if page.tags %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if page.repo_url %}
+    <div class="post-meta">
+      <a href="{{ page.repo_url }}" target="_blank" rel="noopener noreferrer" class="github-link">
+        View source on GitHub →
+      </a>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="post-navigation">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="post-nav-link prev">
+        <span class="nav-label">← Previous</span>
+        <span class="nav-title">{{ page.previous.title }}</span>
+      </a>
+      {% endif %}
+      {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="post-nav-link next">
+        <span class="nav-label">Next →</span>
+        <span class="nav-title">{{ page.next.title }}</span>
+      </a>
+      {% endif %}
+    </div>
+  </footer>
+</article>
+

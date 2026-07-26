@@ -1,0 +1,15 @@
+- slug: coordination
+  title: "Coordination"
+  desc: "Many callers, one resource — thundering herd, singleflight, rate-limited fan-in."
+
+- slug: realtime-and-messaging
+  title: "Realtime & messaging"
+  desc: "Push channels, pub/sub, persistent connections — WebSockets, NATS, the protocols underneath."
+
+- slug: reliability
+  title: "Reliability"
+  desc: "Retries, idempotency, dead-letter queues — making distributed systems survive their own failures."
+
+- slug: case-studies
+  title: "Case studies"
+  desc: "Production incidents at real companies — what broke, why, and what changed afterward."

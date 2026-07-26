@@ -1,0 +1,11 @@
+- slug: podcasts
+  title: "Podcasts"
+  desc: "Notes from podcast and long-form video conversations worth a second pass."
+
+- slug: blogs
+  title: "Blogs"
+  desc: "Posts I read elsewhere that earned a written response."
+
+- slug: events
+  title: "Events"
+  desc: "Talks, meetups, and conferences — what stuck, what didn't."

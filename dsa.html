@@ -1,0 +1,24 @@
+---
+layout: default
+title: DSA
+permalink: /dsa/
+---
+
+<section class="home-hero">
+  <h1>Data structures &amp; algorithms</h1>
+  <p class="home-tagline">Working the NeetCode 250 across 18 patterns. Pick a pattern to drill.</p>
+</section>
+
+<section class="section-tiles">
+  {% for pat in site.data.dsa_taxonomy %}
+    {% assign path_fragment = '_posts/dsa/' | append: pat.slug | append: '/' %}
+    {% assign pat_count = site.posts | where_exp: "p", "p.path contains path_fragment" | size %}
+    <a class="section-tile" href="{{ '/dsa/' | append: pat.slug | append: '/' | relative_url }}">
+      <div class="section-tile-head">
+        <h2>{{ pat.title }}</h2>
+        <span class="section-tile-count">{{ pat_count }}</span>
+      </div>
+      <p class="section-tile-desc">{{ pat.desc }}</p>
+    </a>
+  {% endfor %}
+</section>

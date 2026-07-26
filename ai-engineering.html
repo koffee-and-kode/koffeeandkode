@@ -1,0 +1,37 @@
+---
+layout: default
+title: AI Engineering
+permalink: /ai-engineering/
+---
+
+<div class="blog-page">
+  <h1>AI Engineering</h1>
+  <p class="page-intro">Building LLM systems for production — retrieval-augmented generation, evaluation, MCP tool-calling, and the guardrails that keep them safe. Each post is a bare-bones runnable Go prototype plus the reasoning behind it, drawn from shipping this stack in a HIPAA environment.</p>
+
+  {% assign ai_posts = site.posts | where_exp: "p", "p.path contains '_posts/ai-engineering/'" | sort: 'date' %}
+  {% if ai_posts.size == 0 %}
+    <p>No posts yet.</p>
+  {% else %}
+    <ul class="post-list">
+      {% for post in ai_posts %}
+      <li class="post-item">
+        <article>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          {% if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+          {% endif %}
+          {% if post.tags %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

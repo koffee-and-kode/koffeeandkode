@@ -1,0 +1,37 @@
+---
+layout: default
+title: Python
+permalink: /python/
+---
+
+<div class="blog-page">
+  <h1>Python</h1>
+  <p class="page-intro">The 101–120 fundamentals series — the GIL, the data model, async, and the runtime internals behind code most of us already write from muscle memory.</p>
+
+  {% assign python_posts = site.posts | where_exp: "p", "p.path contains '_posts/python/'" | sort: 'date' %}
+  {% if python_posts.size == 0 %}
+    <p>No posts yet.</p>
+  {% else %}
+    <ul class="post-list">
+      {% for post in python_posts %}
+      <li class="post-item">
+        <article>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          {% if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+          {% endif %}
+          {% if post.tags %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

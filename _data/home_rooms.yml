@@ -1,0 +1,91 @@
+# Drives the home page tile grid (index.html).
+#
+# Each room renders as one tinted panel; `slug` maps to the .tile-group--<slug>
+# CSS class that supplies the room's accent colour.
+#
+# Tile counts come from `path` (number of posts under that folder) unless
+# `count_from` names a special source: "books" (_data/books.yml) or "banter".
+
+- slug: applied
+  label: "Applied Systems"
+  sub: "Solving practical problems at scale"
+  icon: terminal
+  tiles:
+    - title: "Real-world problems"
+      desc: "Case studies & deep dives"
+      url: /real-world-problems/
+      icon: package
+      path: "_posts/real-world-problems/"
+    - title: "AI Engineering"
+      desc: "LLMs, RAG, agents & more"
+      url: /ai-engineering/
+      icon: sparkles
+      path: "_posts/ai-engineering/"
+
+- slug: lang
+  label: "Languages & Fundamentals"
+  sub: "Core building blocks"
+  icon: code
+  tiles:
+    - title: "Go"
+      desc: "Concurrency, systems, tools"
+      url: /go/
+      icon: zap
+      path: "_posts/golang/"
+    - title: "Node.js"
+      desc: "Runtime, ecosystem"
+      url: /nodejs/
+      icon: hexagon
+      path: "_posts/nodejs/"
+    - title: "Python"
+      desc: "Scripting, automation"
+      url: /python/
+      icon: braces
+      path: "_posts/python/"
+    - title: "DSA"
+      desc: "Data structures & algorithms"
+      url: /dsa/
+      icon: graph
+      path: "_posts/dsa/"
+
+- slug: infra
+  label: "Platform & Infra"
+  sub: "Building reliable & scalable systems"
+  icon: cloud
+  tiles:
+    - title: "Cloud"
+      desc: "AWS, GCP, Azure"
+      url: /cloud/
+      icon: cloud
+      path: "_posts/cloud/"
+    - title: "Auth"
+      desc: "Identity, OAuth, security"
+      url: /auth/
+      icon: lock
+      path: "_posts/auth/"
+    - title: "DevOps"
+      desc: "CI/CD, observability, automation"
+      url: /devops/
+      icon: infinity
+      path: "_posts/devops/"
+
+- slug: notes
+  label: "Notes & Workspace"
+  sub: "Everything else that matters"
+  icon: book
+  tiles:
+    - title: "Books & Papers"
+      desc: "Summaries & insights"
+      url: /books/
+      icon: book-open
+      count_from: books
+    - title: "Work setup"
+      desc: "Tools, configs & productivity"
+      url: /work-setup/
+      icon: monitor
+      path: "_posts/work-setup/"
+    - title: "Banter"
+      desc: "Random thoughts & fun stuff"
+      url: /banter/
+      icon: smile
+      count_from: banter

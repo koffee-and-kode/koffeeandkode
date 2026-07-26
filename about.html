@@ -1,0 +1,84 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
+<article class="about">
+  <header class="about-header">
+    <h1>About me</h1>
+    <p class="about-tagline">Senior Backend Engineer with 8 years building distributed systems in Go, Python, and Node.js.</p>
+  </header>
+
+  <section class="about-section">
+    <h2>Currently — B2B AI health tech</h2>
+    <p>Healthcare AI platform. My work has centered on three things:</p>
+    <ul>
+      <li><strong>Performance</strong> — sub-second page loads on the highest-traffic clinical screens.</li>
+      <li><strong>Reliability</strong> — a LOINC lab normalization pipeline I built end-to-end, plus real-time WebSocket events for the Smart Summary product.</li>
+      <li><strong>New capabilities</strong> — MCP test infrastructure with PII scrubbing, a new EMR client integration, and the Auth0 multi-tenancy architecture I'm currently leading.</li>
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <h2>Previously</h2>
+    <ul>
+      <li>
+        <strong>B2B online yoga classes</strong> — Backend Team Lead, 4 years
+        <ul>
+          <li>Led a microservices transformation across 15+ services.</li>
+          <li>Migrated all third-party integrations from Node.js to Go.</li>
+          <li>Executed a multi-cloud migration alongside the CTO.</li>
+          <li>Led distributed caching, OAuth 2.0 services, and real-time analytics pipelines.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Payroll MNC</strong> — backend engineer on an omnichannel customer experience platform.
+      </li>
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <h2>What I write about here</h2>
+    <ul>
+      <li><strong>Backend engineering</strong> — Go, Python, microservices, event-driven systems</li>
+      <li><strong>Real-time architectures</strong> — WebSockets, queues, pub/sub</li>
+      <li><strong>AI/ML infrastructure</strong> — MCP servers, LLM evaluation, RAG pipelines</li>
+      <li><strong>Performance work</strong> — query optimization, caching, profiling</li>
+      <li><strong>Prototypes</strong> — small builds that test an idea end-to-end</li>
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <h2>Outside of work</h2>
+    <ul>
+      <li>Endurance cyclist.</li>
+      <li>Toastmasters speaker.</li>
+    </ul>
+  </section>
+
+  <section class="about-section recommendations">
+    <h2>Recommendations</h2>
+    <blockquote class="recommendation">
+      <p>"I had the pleasure of working closely with Gautam during his time as the Backend Team Lead, and I was consistently impressed by his technical depth, leadership maturity, and strong sense of ownership."</p>
+      <p>"Despite being early in his career, he showed remarkable capability in leading a team, managing complex backend systems, and driving projects to completion with both speed and quality. His ability to break down tough technical challenges, mentor juniors, and collaborate cross-functionally made a meaningful impact on the team's output and culture."</p>
+      <p>"What stood out most was his calm under pressure, thoughtful problem-solving approach, and his proactive mindset."</p>
+      <p>"Gautam is a reliable and high-potential engineer with strong leadership instincts, and I'm confident he'll continue to thrive in any high-performing team. I look forward to seeing what he accomplishes next."</p>
+      <footer class="recommendation-attr">
+        — <strong>Pankaj Soni</strong>, CTO &middot; AI &amp; Cloud Strategist
+        <span class="recommendation-meta">LinkedIn recommendation, June 2025</span>
+      </footer>
+    </blockquote>
+  </section>
+
+  <footer class="about-links">
+    <span>Find me on</span>
+    {% if site.social.github %}
+    <a href="https://github.com/{{ site.social.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+    {% endif %}
+    {% if site.social.linkedin %}
+    <span class="sep">·</span>
+    <a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    {% endif %}
+  </footer>
+</article>

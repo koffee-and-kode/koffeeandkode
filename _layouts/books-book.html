@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div class="blog-page">
+  <p class="page-breadcrumb">
+    <a href="{{ '/books/' | relative_url }}">← Books</a>
+    {% if page.books_theme_slug %}
+    / <a href="{{ '/books/' | append: page.books_theme_slug | append: '/' | relative_url }}">{{ page.books_theme_title | default: page.books_theme_slug }}</a>
+    {% endif %}
+  </p>
+  <h1>{{ page.title }}</h1>
+  {% if page.author %}
+  <p class="page-intro">{{ page.author }}{% if page.status %} — {{ page.status }}{% endif %}</p>
+  {% endif %}
+
+  {% assign book_path = '_posts/books/' | append: page.book_slug | append: '/' %}
+  {% assign chapter_posts = site.posts | where_exp: "p", "p.path contains book_path" | sort: 'date' | reverse %}
+
+  {% if chapter_posts.size == 0 %}
+    <p>No chapter notes yet.</p>
+  {% else %}
+    <ul class="post-list">
+      {% for post in chapter_posts %}
+      <li class="post-item">
+        <article>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          <p class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</p>
+          {% if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+          {% endif %}
+          {% if post.tags %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

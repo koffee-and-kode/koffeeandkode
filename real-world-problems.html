@@ -1,0 +1,23 @@
+---
+layout: default
+title: Real-world problems
+permalink: /real-world-problems/
+---
+
+<section class="home-hero">
+  <h1>Real-world problems</h1>
+  <p class="home-tagline">Backend problems with runnable Go prototypes. Pick a bucket to drill.</p>
+</section>
+
+<section class="section-tiles">
+  {% for cat in site.data.rwp_taxonomy %}
+    {% assign cat_count = site.posts | where_exp: "p", "p.path contains '_posts/real-world-problems/'" | where_exp: "p", "p.rwp_categories contains cat.slug" | size %}
+    <a class="section-tile" href="{{ '/real-world-problems/' | append: cat.slug | append: '/' | relative_url }}">
+      <div class="section-tile-head">
+        <h2>{{ cat.title }}</h2>
+        <span class="section-tile-count">{{ cat_count }}</span>
+      </div>
+      <p class="section-tile-desc">{{ cat.desc }}</p>
+    </a>
+  {% endfor %}
+</section>

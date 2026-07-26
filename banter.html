@@ -1,0 +1,23 @@
+---
+layout: default
+title: Banter
+permalink: /banter/
+---
+
+<section class="home-hero">
+  <h1>Banter</h1>
+  <p class="home-tagline">Short takes from podcasts, blogs, and talks. Pick a bucket.</p>
+</section>
+
+<section class="section-tiles">
+  {% for cat in site.data.banter_taxonomy %}
+    {% assign cat_count = site.banter | where_exp: "e", "e.banter_category == cat.slug" | size %}
+    <a class="section-tile" href="{{ '/banter/' | append: cat.slug | append: '/' | relative_url }}">
+      <div class="section-tile-head">
+        <h2>{{ cat.title }}</h2>
+        <span class="section-tile-count">{{ cat_count }}</span>
+      </div>
+      <p class="section-tile-desc">{{ cat.desc }}</p>
+    </a>
+  {% endfor %}
+</section>

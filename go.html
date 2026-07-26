@@ -1,0 +1,23 @@
+---
+layout: default
+title: Go
+permalink: /go/
+---
+
+<section class="home-hero">
+  <h1>Go</h1>
+  <p class="home-tagline">Fundamentals (101–120), idioms, runtime, and SOLID in Go. Pick a sub-area to drill into.</p>
+</section>
+
+<section class="section-tiles">
+  {% for cat in site.data.go_taxonomy %}
+    {% assign cat_count = site.posts | where_exp: "p", "p.path contains '_posts/golang/'" | where_exp: "p", "p.go_categories contains cat.slug" | size %}
+    <a class="section-tile" href="{{ '/go/' | append: cat.slug | append: '/' | relative_url }}">
+      <div class="section-tile-head">
+        <h2>{{ cat.title }}</h2>
+        <span class="section-tile-count">{{ cat_count }}</span>
+      </div>
+      <p class="section-tile-desc">{{ cat.desc }}</p>
+    </a>
+  {% endfor %}
+</section>

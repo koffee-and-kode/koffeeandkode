@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="blog-page">
+  <p class="page-breadcrumb"><a href="{{ '/banter/' | relative_url }}">← Banter</a></p>
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}
+  <p class="page-intro">{{ page.description }}</p>
+  {% endif %}
+
+  {% assign cat_entries = site.banter | where_exp: "e", "e.banter_category == page.banter_category_slug" | sort: 'date' | reverse %}
+
+  {% if cat_entries.size == 0 %}
+    <p>Nothing in this bucket yet.</p>
+  {% else %}
+    <ul class="post-list">
+      {% for entry in cat_entries %}
+      <li class="post-item">
+        <article>
+          <h2>
+            <a class="post-link" href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a>
+          </h2>
+          <p class="post-meta">{{ entry.date | date: "%Y-%m-%d" }}</p>
+          {% if entry.excerpt %}
+          <p class="post-excerpt">{{ entry.excerpt | strip_html | truncatewords: 50 }}</p>
+          {% endif %}
+          {% if entry.tags %}
+          <div class="post-tags">
+            {% for tag in entry.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="blog-page">
+  <p class="page-breadcrumb"><a href="{{ '/books/' | relative_url }}">← Books</a></p>
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}
+  <p class="page-intro">{{ page.description }}</p>
+  {% endif %}
+</div>
+
+<section class="section-tiles">
+  {% assign theme_books = site.data.books | where: "theme", page.books_theme_slug %}
+  {% for book in theme_books %}
+    {% assign book_path = '_posts/books/' | append: book.slug | append: '/' %}
+    {% assign book_count = site.posts | where_exp: "p", "p.path contains book_path" | size %}
+    <a class="section-tile" href="{{ '/books/' | append: page.books_theme_slug | append: '/' | append: book.slug | append: '/' | relative_url }}">
+      <div class="section-tile-head">
+        <h2>{{ book.title }}</h2>
+        <span class="section-tile-count">{{ book_count }}</span>
+      </div>
+      {% if book.author %}
+      <p class="section-tile-desc">{{ book.author }}{% if book.status %} — {{ book.status }}{% endif %}</p>
+      {% endif %}
+    </a>
+  {% endfor %}
+</section>

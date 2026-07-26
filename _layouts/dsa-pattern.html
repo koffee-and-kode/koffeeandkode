@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="blog-page">
+  <p class="page-breadcrumb"><a href="{{ '/dsa/' | relative_url }}">← DSA</a></p>
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}
+  <p class="page-intro">{{ page.description }}</p>
+  {% endif %}
+
+  {% assign path_fragment = '_posts/dsa/' | append: page.dsa_pattern_slug | append: '/' %}
+  {% assign cat_posts = site.posts | where_exp: "p", "p.path contains path_fragment" | sort: 'date' | reverse %}
+
+  {% if cat_posts.size == 0 %}
+    <p>No posts in this pattern yet.</p>
+  {% else %}
+    <ul class="post-list">
+      {% for post in cat_posts %}
+      <li class="post-item">
+        <article>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          <p class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</p>
+          {% if post.tags %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

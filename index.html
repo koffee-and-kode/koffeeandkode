@@ -1,0 +1,67 @@
+---
+layout: default
+title: Home
+---
+
+<section class="home-card">
+  <span class="home-card-mark">{% include icon.html name="code" %}</span>
+  <div class="home-card-body">
+    <h1>Welcome to KoffeeAndKode</h1>
+    <p class="home-lede">Notes, prototypes, and short opinions on backend engineering —<br>Go, distributed systems, and the books that shaped the way I think about them.</p>
+  </div>
+  <span class="home-card-cup" aria-hidden="true">&#9749;</span>
+</section>
+
+<section class="section-tiles section-tiles--rooms">
+  {%- for room in site.data.home_rooms -%}
+    {%- comment -%} First pass: room total for the badge {%- endcomment -%}
+    {%- assign room_total = 0 -%}
+    {%- for tile in room.tiles -%}
+      {%- if tile.count_from == 'books' -%}
+        {%- assign n = site.data.books | size -%}
+      {%- elsif tile.count_from == 'banter' -%}
+        {%- assign n = site.banter | size -%}
+      {%- else -%}
+        {%- assign n = site.posts | where_exp: "p", "p.path contains tile.path" | size -%}
+      {%- endif -%}
+      {%- assign room_total = room_total | plus: n -%}
+    {%- endfor -%}
+    {%- assign col_count = room.tiles | size -%}
+
+  <section class="tile-group tile-group--{{ room.slug }}" style="--cols: {{ col_count }}">
+    <div class="tile-group-head">
+      <span class="tile-group-mark">{% include icon.html name=room.icon %}</span>
+      <div class="tile-group-heading">
+        <h2 class="tile-group-label">{{ room.label }}</h2>
+        <p class="tile-group-sub">{{ room.sub }}</p>
+      </div>
+      <span class="tile-group-total">{{ room_total }} Total</span>
+    </div>
+
+    <div class="tile-row">
+      {%- for tile in room.tiles -%}
+        {%- if tile.count_from == 'books' -%}
+          {%- assign n = site.data.books | size -%}
+        {%- elsif tile.count_from == 'banter' -%}
+          {%- assign n = site.banter | size -%}
+        {%- else -%}
+          {%- assign n = site.posts | where_exp: "p", "p.path contains tile.path" | size -%}
+        {%- endif -%}
+      <a class="section-tile" href="{{ tile.url | relative_url }}">
+        <span class="section-tile-icon">{% include icon.html name=tile.icon %}</span>
+        <h2>{{ tile.title }}</h2>
+        <p class="section-tile-desc">{{ tile.desc }}</p>
+        <span class="section-tile-count">{{ n }}</span>
+      </a>
+      {%- endfor -%}
+    </div>
+  </section>
+  {%- endfor -%}
+</section>
+
+<section class="home-strip">
+  <span class="home-strip-icon">{% include icon.html name="star" %}</span>
+  <span>Continuously learning. Continuously building.</span>
+  <span class="home-strip-sep" aria-hidden="true"></span>
+  <span>Last updated: {{ site.posts.first.date | date: "%B %-d, %Y" }}</span>
+</section>

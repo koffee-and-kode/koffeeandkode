@@ -1,0 +1,19 @@
+- slug: fundamentals
+  title: "Fundamentals (101–120)"
+  desc: "The 101–120 series — language core, runtime touchpoints, and the toolchain."
+
+- slug: concurrency
+  title: "Concurrency"
+  desc: "Goroutines, channels, context, and the patterns that compose them."
+
+- slug: data-structures
+  title: "Data structures"
+  desc: "Maps, slices, structs, sets — Go's built-in containers and the idioms around them."
+
+- slug: runtime-and-releases
+  title: "Runtime & releases"
+  desc: "GC, scheduler internals, and what each Go version actually ships."
+
+- slug: idioms-and-design
+  title: "Idioms & design"
+  desc: "SOLID in Go, project layout, error handling — the small choices that scale."

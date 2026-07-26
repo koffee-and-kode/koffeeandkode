@@ -1,0 +1,88 @@
+# Site Settings
+title: KoffeeAndKode
+description: A developer blog featuring technical discussions, tutorials, and prototype documentation
+author: Gautham Reddy Surakanti
+url: https://koffeeandkode.com
+baseurl: "" # Custom domain serves at root; no path prefix needed
+
+# GitHub Pages Settings
+github: [username]
+github_username: koffee-and-kode
+
+# Build Settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:slug/
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - prototype-code/
+  - dev/
+
+# Collections
+collections:
+  prototypes:
+    output: true
+    permalink: /prototypes/:name/
+  banter:
+    output: true
+    permalink: /banter/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Gautham Reddy Surakanti"
+  - scope:
+      path: ""
+      type: "prototypes"
+    values:
+      layout: "prototype"
+      author: "Gautham Reddy Surakanti"
+  - scope:
+      path: ""
+      type: "banter"
+    values:
+      layout: "banter"
+      author: "Gautham Reddy Surakanti"
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Resources
+    url: /resources/
+  - title: About
+    url: /about/
+
+# Using custom layouts (no theme)
+
+# Kramdown settings for code highlighting
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Social Links (optional)
+social:
+  github: koffee-and-kode
+  twitter: "" # add your Twitter handle if you have one
+  linkedin: "gauthamsurakanti"
+

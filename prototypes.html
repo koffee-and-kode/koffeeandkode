@@ -1,0 +1,33 @@
+---
+layout: default
+title: Prototypes
+permalink: /prototypes/
+---
+
+<div class="prototypes-page">
+  <h1>Prototype Documentation</h1>
+  <p class="page-description">Backend prototypes, APIs, and experimental projects with code snippets and documentation.</p>
+  
+  <ul class="prototype-list">
+    {% for prototype in site.prototypes %}
+    <li class="prototype-item">
+      <article>
+        <h2>
+          <a class="prototype-link" href="{{ prototype.url | relative_url }}">{{ prototype.title | escape }}</a>
+        </h2>
+        {% if prototype.excerpt %}
+        <p class="prototype-excerpt">{{ prototype.excerpt | strip_html | truncatewords: 50 }}</p>
+        {% endif %}
+        {% if prototype.tech_stack %}
+        <div class="tech-stack">
+          {% for tech in prototype.tech_stack %}
+          <span class="tech-badge">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+

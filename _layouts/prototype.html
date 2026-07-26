@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<article class="prototype">
+  <header class="prototype-header">
+    <h1 class="prototype-title">{{ page.title | escape }}</h1>
+    <div class="prototype-meta">
+      {% if page.tech_stack %}
+      <div class="tech-stack">
+        <strong>Tech Stack:</strong>
+        {% for tech in page.tech_stack %}
+        <span class="tech-badge">{{ tech }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% if page.github_url %}
+      <a href="{{ page.github_url }}" target="_blank" rel="noopener noreferrer" class="github-link">
+        View on GitHub →
+      </a>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="prototype-content">
+    {{ content }}
+  </div>
+
+  <footer class="prototype-footer">
+    <a href="/prototypes/" class="back-link">← Back to Prototypes</a>
+  </footer>
+</article>
+

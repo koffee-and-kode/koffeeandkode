@@ -1,0 +1,37 @@
+---
+layout: default
+title: Cloud
+permalink: /cloud/
+---
+
+<div class="blog-page">
+  <h1>Cloud</h1>
+  <p class="page-intro">Notes on building on the major clouds — AWS first, with Bedrock, Kinesis, and the rest of the modern AI/data toolkit; Azure and GCP as the surface area grows.</p>
+
+  {% assign cloud_posts = site.posts | where_exp: "p", "p.path contains '_posts/cloud/'" | sort: 'date' %}
+  {% if cloud_posts.size == 0 %}
+    <p>No posts yet.</p>
+  {% else %}
+    <ul class="post-list">
+      {% for post in cloud_posts %}
+      <li class="post-item">
+        <article>
+          <h2>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h2>
+          {% if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+          {% endif %}
+          {% if post.tags %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

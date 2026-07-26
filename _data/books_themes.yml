@@ -1,0 +1,11 @@
+- slug: database
+  title: "Database & data systems"
+  desc: "Notes from books on how data systems are built, replicated, and made reliable."
+
+- slug: system-design
+  title: "System design"
+  desc: "Interview-style book series on designing distributed systems end-to-end."
+
+- slug: productivity
+  title: "Productivity & focus"
+  desc: "Working better, focusing harder, and shipping more meaningful work."
